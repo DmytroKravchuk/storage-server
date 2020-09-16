@@ -32,14 +32,14 @@ class StorageSaver {
     try {
       this.storage.setItem(this.storageId, JSON.stringify(data));
     } catch (e) {
-      FusionLogger.error('Storage is not available!', 'StorageSaver');
+      console.error('Storage is not available!', 'StorageSaver');
     }
   }
 
   remove(key) {
     const sd = this.getStorageData();
     if (!sd[key]) {
-      FusionLogger.error('Wrong storage key', 'StorageSaver');
+      console.error('Wrong storage key', 'StorageSaver');
       return;
     }
     delete sd[key];
